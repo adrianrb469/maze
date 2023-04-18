@@ -1,0 +1,10 @@
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+}
+body {
+    background-color: black;
+    overflow: hidden;
+}

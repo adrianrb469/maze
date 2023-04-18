@@ -1,0 +1,17 @@
+.wall {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ground {
+    background-color: transparent;
+}
+.normal {
+    background-color: rgb(119, 202, 123);
+}
+.goal {
+    background-color: rgb(97, 184, 255);
+}
