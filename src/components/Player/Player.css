@@ -1,10 +1,61 @@
-.player {
-    background-color: red;
+:root {
+    --pixel-size:1;
+ }
 
-    width: 30px;
-    height: 45px;
-    background: url("https://art.pixilart.com/50a3e3178733e88.png") no-repeat
-        center;
-    background-size: 60px;
-    z-index: 2;
+.player {
+
+    image-rendering: pixelated;
+    
+    width: calc(20px * var(--pixel-size));
+    height: calc(31px * var(--pixel-size));
+    overflow: hidden;
+    position: relative;
+  
 }
+
+.player-base{
+    width: calc(128px * var(--pixel-size));
+    left: calc(-38px* var(--pixel-size));
+    position: absolute;
+}
+
+.player-spritesheet {
+
+    animation: moveSpritesheet 0.5s steps(4) infinite;
+
+    width: calc(128px * var(--pixel-size));
+    left: calc(-6px* var(--pixel-size));
+    position: absolute;
+   
+}
+.player-front{
+    
+  
+   
+}
+
+.player-right{
+    
+    top: calc(-65px * var(--pixel-size));
+
+}
+
+.player-left{
+    
+    top: calc(-32px * var(--pixel-size));
+
+}
+.player-up{
+    
+    top: calc(-98px * var(--pixel-size));
+
+}
+
+@keyframes moveSpritesheet {
+    from {
+       transform: translate3d(0px,0,0)
+    }
+    to {
+       transform: translate3d(-100%,0,0)
+    }
+ }

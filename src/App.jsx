@@ -1,33 +1,19 @@
 import React, { useState, useEffect } from "react";
-import Maze from "./components/Maze/Maze";
+import { Routes, Route } from "react-router-dom";
+//import Maze from "./components/Maze/Maze";
+import MazeGame from "./pages/Maze/MazeGame.jsx";
+import Menu from "./pages/Menu/Menu";
 import "./App.css";
 
-function App() {
-    const [maze, setMaze] = useState(null);
-
-    const getMaze = async (w, h) => {
-        const response = await fetch(
-            `http://maze.uvgenios.online/?type=json&w=${w}&h=${h}`
-        );
-        return await response.json();
-    };
-
-    const loadMaze = async () => {
-        const val = await getMaze(4, 4);
-        setMaze(val);
-    };
-
-    useEffect(() => {
-        loadMaze();
-    }, []);
-
-    if (!maze) return <div>Loading...</div>;
-
-    return (
-        <div className="App">
-            <Maze layout={maze} w={4} h={4} />
-        </div>
-    );
-}
+const App = () => {
+  return (
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Menu />} />
+        <Route path="/maze" element={<MazeGame />} />
+      </Routes>
+    </div>
+  );
+};
 
 export default App;

@@ -1,3 +1,43 @@
 .maze {
-    background-color: rgb(234, 192, 153);
+  background-color: rgb(165, 89, 89);
+  border: rgb(215, 215, 215) 6px dashed;
+  display: grid;
+  height: auto;
+}
+
+.wall {
+
+  box-shadow: rgba(40, 42, 41, 0.827) 0px 7px 29px 0px;
+}
+
+.inside-wall {
+  background-color: rgb(126, 45, 45);
+  width: 100%;
+  height: 100%;
+}
+
+.maze-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(63, 63, 63);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.6);
+    background-color: black;
+  }
+  50% {
+    filter: hue-rotate(360deg);
+    transform: scale(0.15);
+    background: rgba(255, 47, 71, 0.889);
+  }
+  100% {
+    transform: scale(0.6);
+    background-color: black;
+  }
 }
