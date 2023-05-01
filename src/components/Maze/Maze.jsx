@@ -56,8 +56,8 @@ const Maze = ({ layout, w, h, sprite }) => {
     checkCollisions();
   }, [playerInfo.position]);
 
-  const width = 1000;
-  const height = 1000;
+  const width = (w * 3 + 1)*60;
+  const height = 'auto';
 
   return (
     <>

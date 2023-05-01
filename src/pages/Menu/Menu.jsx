@@ -87,9 +87,7 @@ const Menu = () => {
             min="4"
             max="100"
             onChange={(e) => {
-              if (e.target.value < 4 || e.target.value > 100) {
-                e.target.value = 4;
-              }
+         
 
               setSettings((prevDimensions) => ({
                 ...prevDimensions,
@@ -107,10 +105,7 @@ const Menu = () => {
             min="4"
             max="100"
             onChange={(e) => {
-              if (e.target.value < 4 || e.target.value > 100) {
-                e.target.value = 4;
-              }
-
+        
               setSettings((prevDimensions) => ({
                 ...prevDimensions,
                 height: e.target.value,
