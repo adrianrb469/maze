@@ -1,4 +1,4 @@
-# CC3034-Lab11
+# CC3034-Lab8
 Maze Game
 
 (?/20 puntos) [Criterio subjetivo] Según qué tan interesante es el diseño de su interfaz <br>
