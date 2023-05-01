@@ -1,25 +1,36 @@
-import React, { useState, useEffect } from "react";
-import Countdown from "react-countdown";
+import React, { useEffect, useState } from "react";
 import "./MyCountdown.css";
 
 function MyCountdown({ seconds }) {
-  const [targetDate, setTargetDate] = useState(
-    new Date(Date.now() + seconds * 1000)
-  );
+  const [remainingTime, setRemainingTime] = useState(seconds);
 
   useEffect(() => {
-    setTargetDate(new Date(Date.now() + seconds * 1000));
-  }, [seconds]);
+    const intervalId = setInterval(() => {
+      setRemainingTime((prevRemainingTime) => prevRemainingTime - 1);
+    }, 1000);
 
-  const renderer = ({ seconds }) => {
-    return (
-      <div className="timer">
-        {seconds > 0 ? <span>{seconds} seconds</span> : <span>Game over!</span>}
-      </div>
-    );
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+
+  const formatTime = (time) => {
+    const minutes = Math.floor(time / 60)
+      .toString()
+      .padStart(2, "0");
+    const seconds = (time % 60).toString().padStart(2, "0");
+    return `${minutes}:${seconds}`;
   };
 
-  return <Countdown date={targetDate} renderer={renderer} />;
+  return (
+    <div className="timer">
+      {remainingTime > 0 ? (
+        <div>{formatTime(remainingTime)}</div>
+      ) : (
+        <div>Game Over</div>
+      )}
+    </div>
+  );
 }
 
 export default MyCountdown;

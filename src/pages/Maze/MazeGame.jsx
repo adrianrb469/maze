@@ -34,6 +34,10 @@ const MazeGame = () => {
         h={settings.height}
         sprite={settings.sprite}
       />
+      <h3 className="tip">
+        💡 You can use the A and W keys to scale the sprite - <br /> 💀 If you
+        touch the wall you reset.{" "}
+      </h3>
       {settings.hasTime ? (
         <MyCountdown seconds={settings.timeLimit} className="timer" />
       ) : null}
