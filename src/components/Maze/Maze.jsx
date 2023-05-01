@@ -3,11 +3,12 @@ import Player from "../Player/Player";
 import Wall from "../Wall/Wall";
 import "./Maze.css";
 
-const  Maze = ({ layout, w, h }) => {
+const Maze = ({ layout, w, h, sprite }) => {
   const [isColliding, setIsColliding] = useState(false);
   const initialPosition = { x: 10, y: 10 };
   const playerRef = useRef();
   const [playerInfo, setPlayerInfo] = useState({
+    sprite: sprite,
     color: "orange",
     position: initialPosition,
     width: 100,
@@ -148,6 +149,6 @@ const  Maze = ({ layout, w, h }) => {
       </div>
     </>
   );
-}
+};
 
 export default Maze;

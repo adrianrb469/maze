@@ -1,0 +1,9 @@
+.timer {
+  color: white;
+  position: absolute;
+  background-color: black;
+  padding: 0.5em;
+  top: 5%;
+  font-size: 1.75rem;
+  font-family: "JetBrains Mono", monospace;
+}

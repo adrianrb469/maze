@@ -131,7 +131,7 @@ const Player = forwardRef(({ setPlayerInfo, playerInfo, dimensions }, ref) => {
     >
       <img
         className="player-base player-front"
-        src="src/assets/omori.png"
+        src={`src/assets/${playerInfo.sprite}.png`}
         alt="DemoRpgCharacter"
         ref={img}
         style={{ "--pixel-size": `${pixelsize}` }}

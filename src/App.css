@@ -6,6 +6,9 @@
     
 }
 
+:root {
+    --theme-color: #d43a3a;
+}
 
 body {
     background-color: #030303;

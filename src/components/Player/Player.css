@@ -1,61 +1,48 @@
 :root {
-    --pixel-size:1;
- }
-
-.player {
-
-    image-rendering: pixelated;
-    
-    width: calc(20px * var(--pixel-size));
-    height: calc(31px * var(--pixel-size));
-    overflow: hidden;
-    position: relative;
-  
+  --pixel-size: 1;
 }
 
-.player-base{
-    width: calc(128px * var(--pixel-size));
-    left: calc(-38px* var(--pixel-size));
-    position: absolute;
+.player {
+  image-rendering: pixelated;
+
+  width: calc(20px * var(--pixel-size));
+  height: calc(31px * var(--pixel-size));
+  overflow: hidden;
+  position: relative;
+}
+
+.player-base {
+  width: calc(128px * var(--pixel-size));
+  left: calc(-38px * var(--pixel-size));
+  position: absolute;
 }
 
 .player-spritesheet {
+  animation: moveSpritesheet 0.5s steps(4) infinite;
 
-    animation: moveSpritesheet 0.5s steps(4) infinite;
-
-    width: calc(128px * var(--pixel-size));
-    left: calc(-6px* var(--pixel-size));
-    position: absolute;
-   
+  width: calc(128px * var(--pixel-size));
+  left: calc(-6px * var(--pixel-size));
+  position: absolute;
 }
-.player-front{
-    
-  
-   
+.player-front {
 }
 
-.player-right{
-    
-    top: calc(-65px * var(--pixel-size));
-
+.player-right {
+  top: calc(-65px * var(--pixel-size));
 }
 
-.player-left{
-    
-    top: calc(-32px * var(--pixel-size));
-
+.player-left {
+  top: calc(-32px * var(--pixel-size));
 }
-.player-up{
-    
-    top: calc(-98px * var(--pixel-size));
-
+.player-up {
+  top: calc(-98px * var(--pixel-size));
 }
 
 @keyframes moveSpritesheet {
-    from {
-       transform: translate3d(0px,0,0)
-    }
-    to {
-       transform: translate3d(-100%,0,0)
-    }
- }
+  from {
+    transform: translate3d(0px, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
