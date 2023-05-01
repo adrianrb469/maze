@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import "./MyCountdown.css";
 
 function MyCountdown({ seconds }) {
@@ -33,4 +34,7 @@ function MyCountdown({ seconds }) {
   );
 }
 
+MyCountdown.propTypes = {
+  seconds: PropTypes.number.isRequired,
+};
 export default MyCountdown;

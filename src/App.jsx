@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 //import Maze from "./components/Maze/Maze";
 import MazeGame from "./pages/Maze/MazeGame.jsx";

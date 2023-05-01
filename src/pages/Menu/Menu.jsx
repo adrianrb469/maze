@@ -5,8 +5,8 @@ import "./Menu.css";
 
 const Menu = () => {
   const [settings, setSettings] = React.useState({
-    width: 4,
-    height: 4,
+    width: "4",
+    height: "4",
     sprite: "omori",
     hasTime: false,
     timeLimit: 0,
@@ -87,8 +87,6 @@ const Menu = () => {
             min="4"
             max="100"
             onChange={(e) => {
-         
-
               setSettings((prevDimensions) => ({
                 ...prevDimensions,
                 width: e.target.value,
@@ -105,7 +103,6 @@ const Menu = () => {
             min="4"
             max="100"
             onChange={(e) => {
-        
               setSettings((prevDimensions) => ({
                 ...prevDimensions,
                 height: e.target.value,

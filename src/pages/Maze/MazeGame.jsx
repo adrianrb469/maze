@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect} from "react";
 import { useLocation } from "react-router-dom";
 import Maze from "/src/components/Maze/Maze.jsx";
 import MyCountdown from "../../components/Countdown/MyCountdown";
@@ -38,8 +38,7 @@ const MazeGame = () => {
         );
         console.log(scale);
         el.style.transform = `scale(${scale})`;
-      } else {
-      }
+      } 
     }
 
     if (!maze) return;
@@ -66,7 +65,7 @@ const MazeGame = () => {
       <h3 className="tip">
         💡 You can use the A and W keys to scale the sprite - <br /> 💀 If you
         touch the wall you reset.
-        <br /> If you can't see, zoom in or out.
+        <br /> If you can&apos;t see, zoom in or out.
       </h3>
       {settings.hasTime ? (
         <MyCountdown seconds={settings.timeLimit} className="timer" />

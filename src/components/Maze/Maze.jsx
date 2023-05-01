@@ -1,9 +1,11 @@
 import React, { useEffect, useState, useRef } from "react";
 import Player from "../Player/Player";
-import Wall from "../Wall/Wall";
+import PropTypes from "prop-types";
+import "../Wall/Wall.css";
 import "./Maze.css";
 
 const Maze = ({ layout, w, h, sprite }) => {
+  // eslint-disable-next-line no-unused-vars
   const [isColliding, setIsColliding] = useState(false);
   const initialPosition = { x: 10, y: 10 };
   const playerRef = useRef();
@@ -56,8 +58,8 @@ const Maze = ({ layout, w, h, sprite }) => {
     checkCollisions();
   }, [playerInfo.position]);
 
-  const width = (w * 3 + 1)*60;
-  const height = 'auto';
+  const width = (w * 3 + 1) * 60;
+  const height = "auto";
 
   return (
     <>
@@ -149,6 +151,13 @@ const Maze = ({ layout, w, h, sprite }) => {
       </div>
     </>
   );
+};
+
+Maze.propTypes = {
+  layout: PropTypes.arrayOf(PropTypes.arrayOf(String)).isRequired,
+  w: PropTypes.string.isRequired,
+  h: PropTypes.string.isRequired,
+  sprite: PropTypes.string.isRequired,
 };
 
 export default Maze;

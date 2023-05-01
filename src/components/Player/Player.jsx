@@ -1,8 +1,9 @@
 /* eslint-disable react/display-name */
 import React, { useEffect, useState, forwardRef, useRef } from "react";
 import "./Player.css";
+import PropTypes from "prop-types";
 
-const Player = forwardRef(({ setPlayerInfo, playerInfo, dimensions }, ref) => {
+export const Player = forwardRef(({ setPlayerInfo, playerInfo, dimensions }, ref) => {
   const img = useRef(null);
 
   function decay(dx, dy) {
@@ -13,7 +14,7 @@ const Player = forwardRef(({ setPlayerInfo, playerInfo, dimensions }, ref) => {
     let start = Date.now();
     let speed = initialSpeed;
 
-    requestAnimationFrame(function animateWalk(timestamp) {
+    requestAnimationFrame(function animateWalk() {
       let interval = Date.now() - start;
 
       if (dx < 0) {
@@ -139,4 +140,14 @@ const Player = forwardRef(({ setPlayerInfo, playerInfo, dimensions }, ref) => {
     </div>
   );
 });
+
+Player.propTypes = {
+  setPlayerInfo: PropTypes.func.isRequired,
+  playerInfo: PropTypes.object.isRequired,
+  dimensions: PropTypes.string.isRequired,
+};
+
+
 export default Player;
+
+
